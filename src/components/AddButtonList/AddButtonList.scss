@@ -7,10 +7,18 @@
       border-radius: 10px ;
       padding: 18px 18px;
       box-sizing: border-box;
+      position: relative;
       
       .button {
         width: 100%;
         margin-top: 15px;
+      }
+
+      &-close-btn {
+        position: absolute;
+        right: -8px;
+        top: -8px;
+        cursor: pointer;
       }
 
       &-colors {
