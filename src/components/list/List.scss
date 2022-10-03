@@ -2,10 +2,12 @@
 
     margin-bottom: 30px;
 
-    &__icon-plus{
-        path{
-            stroke: #868686;
-        }
+    &__add-button{
+       opacity: 0.4;
+
+       &:hover {
+        opacity: 1;
+       }
     }
 
     li{
