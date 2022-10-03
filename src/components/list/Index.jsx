@@ -1,10 +1,11 @@
 import React from "react";
-import "./List.scss";
 import classNames from "classnames";
 
-const List = ({ items, isRemovable }) => {
+import "./List.scss";
+
+const List = ({ items, isRemovable, onClick }) => {
   return (
-    <ul className="list">
+    <ul onClick={onClick} className="list">
       {items.map((item, index) => (
         <li
           key={index}

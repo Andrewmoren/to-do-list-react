@@ -2,6 +2,9 @@ import React from "react";
 import List from "./components/list/Index";
 import listSvg from "./assets/img/list.svg";
 import AddButtonList from "./components/AddButtonList/AddButtonList";
+
+import dB from "./assets/db.json";
+
 const App = () => {
   return (
     <div className="todo">
@@ -23,7 +26,7 @@ const App = () => {
             { color: "pink", name: "Фильмы и книги" },
           ]}
         />
-        <AddButtonList />
+        <AddButtonList colors={dB.colors} />
       </div>
       <div className="todo__tasks"></div>
     </div>

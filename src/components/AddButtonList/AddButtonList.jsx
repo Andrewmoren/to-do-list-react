@@ -1,12 +1,14 @@
-import React, { useState, Fragment } from "react";
-import List from "../list/Index";
+import React, { useState } from "react";
 
+import List from "../list/Index";
 import "./AddButtonList.scss";
 
 const AddButtonList = () => {
+  const [visiblePopup, setvisiblePopup] = useState(false);
   return (
-    <Fragment>
+    <div className="add-list">
       <List
+        onClick={() => setvisiblePopup(!visiblePopup)}
         items={[
           {
             className: "list__add-button",
@@ -38,10 +40,13 @@ const AddButtonList = () => {
           },
         ]}
       />
-      <div className="add-list-popup">
-        <h1>sdsdf</h1>
-      </div>
-    </Fragment>
+      {visiblePopup && (
+        <div className="add-list__popup">
+          <input className="field" type="text" placeholder="Название списка" />
+          <button className="button">Добавить</button>
+        </div>
+      )}
+    </div>
   );
 };
 
