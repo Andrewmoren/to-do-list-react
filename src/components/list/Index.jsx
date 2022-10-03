@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import Badge from "../Badge/Bagge";
 
 import "./List.scss";
 
@@ -11,13 +12,7 @@ const List = ({ items, isRemovable, onClick }) => {
           key={index}
           className={classNames(item.className, { active: item.active })}
         >
-          <i>
-            {item.icon ? (
-              item.icon
-            ) : (
-              <i className={`badge badge --${item.color}`}></i>
-            )}
-          </i>
+          <i>{item.icon ? item.icon : <Badge color={item.color} />}</i>
           <span>{item.name}</span>
         </li>
       ))}

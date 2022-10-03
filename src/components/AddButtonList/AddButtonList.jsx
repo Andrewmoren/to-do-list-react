@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import Badge from "../Badge/Bagge";
 
 import List from "../list/Index";
 import "./AddButtonList.scss";
 
-const AddButtonList = () => {
+const AddButtonList = ({ colors }) => {
   const [visiblePopup, setvisiblePopup] = useState(false);
+  const [selectedColor, setselectedColor] = useState(null);
+  console.log(selectedColor);
   return (
     <div className="add-list">
       <List
@@ -43,6 +46,16 @@ const AddButtonList = () => {
       {visiblePopup && (
         <div className="add-list__popup">
           <input className="field" type="text" placeholder="Название списка" />
+          <div className="add-list__popup-colors">
+            {colors.map((color, index) => (
+              <Badge
+                onClick={() => setselectedColor(color.id)}
+                key={index.id}
+                color={color.name}
+                className={selectedColor == color.id && "active"}
+              />
+            ))}
+          </div>
           <button className="button">Добавить</button>
         </div>
       )}
