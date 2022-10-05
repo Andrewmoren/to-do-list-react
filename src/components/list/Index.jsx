@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import Badge from "../Badge/Bagge";
 
+import removeSvg from "../../assets/img/remove.svg";
 import "./List.scss";
 
 const List = ({ items, isRemovable, onClick }) => {
