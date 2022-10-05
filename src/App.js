@@ -4,6 +4,7 @@ import listSvg from "./assets/img/list.svg";
 import AddButtonList from "./components/AddButtonList/AddButtonList";
 
 import dB from "./assets/db.json";
+import Tasks from "./components/tasks/Tasks";
 
 const App = () => {
   const [lists, setLists] = useState(
@@ -27,15 +28,22 @@ const App = () => {
             {
               icon: <img src={listSvg} alt="List icon" />,
               name: "Все задачи",
-              active: true,
             },
           ]}
           isRemovable={true}
         />
-        <List items={lists} />
+        <List
+          items={lists}
+          onRemove={(list) => {
+            console.log(list);
+          }}
+          isRemovable
+        />
         <AddButtonList onAdd={onAddList} colors={dB.colors} />
       </div>
-      <div className="todo__tasks"></div>
+      <div className="todo__tasks">
+        <Tasks />
+      </div>
     </div>
   );
 };
