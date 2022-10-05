@@ -14,6 +14,11 @@ const App = () => {
       return item;
     })
   );
+
+  const onAddList = (obj) => {
+    const newLists = [...lists, obj];
+    setLists(newLists);
+  };
   return (
     <div className="todo">
       <div className="todo__sidebar">
@@ -28,7 +33,7 @@ const App = () => {
           isRemovable={true}
         />
         <List items={lists} />
-        <AddButtonList colors={dB.colors} />
+        <AddButtonList onAdd={onAddList} colors={dB.colors} />
       </div>
       <div className="todo__tasks"></div>
     </div>
