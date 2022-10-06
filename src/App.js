@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import List from "./components/list/Index";
 import listSvg from "./assets/img/list.svg";
 import AddButtonList from "./components/AddButtonList/AddButtonList";
-
-import dB from "./assets/db.json";
 import Tasks from "./components/tasks/Tasks";
+
+// import dB from "./assets/db.json";
 
 const App = () => {
   const [lists, setLists] = useState(
@@ -32,13 +32,7 @@ const App = () => {
           ]}
           isRemovable={true}
         />
-        <List
-          items={lists}
-          onRemove={(list) => {
-            console.log(list);
-          }}
-          isRemovable
-        />
+        <List items={lists} onRemove={(list) => {}} isRemovable />
         <AddButtonList onAdd={onAddList} colors={dB.colors} />
       </div>
       <div className="todo__tasks">
