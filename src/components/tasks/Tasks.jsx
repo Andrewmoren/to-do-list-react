@@ -3,15 +3,20 @@ import editSvg from "../../assets/img/edit.svg";
 import axios from "axios";
 
 import "./tasks.scss";
+import AddTaskForm from "./AddTaskForm";
 
 const Tasks = ({ list, onEditTitle }) => {
   const editTitle = () => {
     const newTitle = window.prompt("List name", list.name);
     if (newTitle) {
       onEditTitle(list.id, newTitle);
-      axios.patch("http://localhost:3001/lists/" + list.id, {
-        name: newTitle,
-      });
+      axios
+        .patch("http://localhost:3001/lists/" + list.id, {
+          name: newTitle,
+        })
+        .catch(() => {
+          alert("Error");
+        });
     }
   };
   return (
@@ -47,6 +52,7 @@ const Tasks = ({ list, onEditTitle }) => {
             <input readOnly value={task.text} />
           </div>
         ))}
+        <AddTaskForm />
       </div>
     </div>
   );
