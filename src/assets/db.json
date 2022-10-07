@@ -31,9 +31,19 @@
       "id": 6
     },
     {
-      "name": "Курс по ReactJS ToDo",
-      "colorId": 7,
+      "name": "fg",
+      "colorId": 4,
       "id": 7
+    },
+    {
+      "name": "fgfg",
+      "colorId": 1,
+      "id": 8
+    },
+    {
+      "name": "fgfgd",
+      "colorId": 1,
+      "id": 9
     }
   ],
   "tasks": [
@@ -168,6 +178,9 @@
       "id": 8,
       "hex": "#FF6464",
       "name": "red"
+    },
+    {
+      "id": 9
     }
   ]
 }
