@@ -5,7 +5,7 @@ import axios from "axios";
 import "./tasks.scss";
 import AddTaskForm from "./AddTaskForm";
 
-const Tasks = ({ list, onEditTitle }) => {
+const Tasks = ({ list, onEditTitle, onAddTask }) => {
   const editTitle = () => {
     const newTitle = window.prompt("List name", list.name);
     if (newTitle) {
@@ -52,7 +52,7 @@ const Tasks = ({ list, onEditTitle }) => {
             <input readOnly value={task.text} />
           </div>
         ))}
-        <AddTaskForm />
+        <AddTaskForm list={list} onAddTask={onAddTask} />
       </div>
     </div>
   );
