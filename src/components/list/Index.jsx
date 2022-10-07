@@ -27,7 +27,9 @@ const List = ({
         <li
           key={index}
           className={classNames(item.className, {
-            active: activeItem && activeItem.id === item.id,
+            active: item.active
+              ? item.active
+              : activeItem && activeItem.id === item.id,
           })}
           onClick={onClickItem ? () => onClickItem(item) : null}
         >

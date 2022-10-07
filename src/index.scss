@@ -43,6 +43,7 @@
     border: 0;
     padding: 10px 20px;
     cursor: pointer;
+    font-size: 14px;
 
     
 
@@ -52,6 +53,10 @@
 
     &:active {
         background: darken(#4dd599, 12%)
+    }
+
+    &:disabled{
+        background: #d8d8d8
     }
     &--grey {
         background: #f4f6f8;

@@ -43,6 +43,9 @@ const AddButtonList = ({ colors, onAdd }) => {
         onAdd(listObj);
         onClose();
       })
+      .catch(() => {
+        alert("Error is add list!");
+      })
       .finaly(() => {
         setIsLoading(false);
       });

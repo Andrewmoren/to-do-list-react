@@ -5,8 +5,6 @@ import listSvg from "./assets/img/list.svg";
 import AddButtonList from "./components/AddButtonList/AddButtonList";
 import Tasks from "./components/tasks/Tasks";
 
-// import dB from "./assets/db.json";
-
 const App = () => {
   const [lists, setLists] = useState(null);
   const [colors, setColors] = useState(null);
@@ -53,6 +51,7 @@ const App = () => {
         <List
           items={[
             {
+              active: true,
               icon: <img src={listSvg} alt="List icon" />,
               name: "Все задачи",
             },
