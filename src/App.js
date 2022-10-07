@@ -12,9 +12,11 @@ const App = () => {
   const [colors, setColors] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/lists?expand=color").then(({ data }) => {
-      setLists(data);
-    });
+    axios
+      .get("http://localhost:3001/lists?expand=color&_embed=tasks")
+      .then(({ data }) => {
+        setLists(data);
+      });
     axios.get("http://localhost:3001/colors").then(({ data }) => {
       setColors(data);
     });
@@ -39,8 +41,9 @@ const App = () => {
         {lists ? (
           <List
             items={lists}
-            onRemove={(list) => {
-              console.log(list);
+            onRemove={(id) => {
+              const newLists = lists.filter((item) => item.id !== id);
+              setLists(newLists);
             }}
             isRemovable
           />
@@ -49,9 +52,7 @@ const App = () => {
         )}
         <AddButtonList onAdd={onAddList} colors={colors} />
       </div>
-      <div className="todo__tasks">
-        <Tasks />
-      </div>
+      <div className="todo__tasks">{lists && <Tasks list={lists[1]} />}</div>
     </div>
   );
 };

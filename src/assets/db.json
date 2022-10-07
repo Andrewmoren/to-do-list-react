@@ -24,26 +24,6 @@
       "id": 5,
       "name": "Личное",
       "colorId": 1
-    },
-    {
-      "name": "Спорт",
-      "colorId": 3,
-      "id": 6
-    },
-    {
-      "name": "fg",
-      "colorId": 4,
-      "id": 7
-    },
-    {
-      "name": "fgfg",
-      "colorId": 1,
-      "id": 8
-    },
-    {
-      "name": "fgfgd",
-      "colorId": 1,
-      "id": 9
     }
   ],
   "tasks": [
@@ -112,30 +92,6 @@
       "text": "222",
       "completed": true,
       "id": 12
-    },
-    {
-      "listId": 7,
-      "text": "Сделали сайдбар",
-      "completed": true,
-      "id": 15
-    },
-    {
-      "listId": 7,
-      "text": "Сделали список задач",
-      "completed": true,
-      "id": 16
-    },
-    {
-      "listId": 7,
-      "text": "Сделали удаление и редактирование задач и списков",
-      "completed": true,
-      "id": 17
-    },
-    {
-      "listId": 8,
-      "text": "tttt",
-      "completed": false,
-      "id": 18
     }
   ],
   "colors": [

@@ -30,6 +30,7 @@ const AddButtonList = ({ colors, onAdd }) => {
       alert("Введите название списка!");
       return;
     }
+    setIsLoading(true);
 
     axios
       .post("http://localhost:3001/lists", {
@@ -41,6 +42,9 @@ const AddButtonList = ({ colors, onAdd }) => {
         const listObj = { ...data, color: { name: color } };
         onAdd(listObj);
         onClose();
+      })
+      .finaly(() => {
+        setIsLoading(false);
       });
   };
 
@@ -105,7 +109,7 @@ const AddButtonList = ({ colors, onAdd }) => {
             ))}
           </div>
           <button onClick={addList} className="button">
-            Добавить
+            {isLoading ? "Add..." : "Add?"}
           </button>
         </div>
       )}
